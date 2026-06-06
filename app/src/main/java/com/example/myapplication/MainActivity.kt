@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -49,13 +50,21 @@ class MainActivity : AppCompatActivity() {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinDown.adapter = adapter
 
-        val viewColor = findViewById<TextView>(R.id.viewColor)
-        // set a background color based on the selected item
-        if (spinDown.selectedItem == "Water") {
-            viewColor.setBackgroundColor(resources.getColor(R.color.black))
-        } else if (spinDown.selectedItem == "Fire") {
-            viewColor.setBackgroundColor(resources.getColor(R.color.white))
+        // declaring the button variable
+        val button = findViewById<Button>(R.id.button)
+        // setting the on click listener for the button
+        button.setOnClickListener {
+            // declaring the viewColor variable
+            val viewColor = findViewById<TextView>(R.id.viewColor)
+            // set a background color based on the selected item
+            if (spinDown.selectedItem == "Water") {
+                viewColor.setBackgroundColor(resources.getColor(R.color.black))
+            } else if (spinDown.selectedItem == "Fire") {
+                viewColor.setBackgroundColor(resources.getColor(R.color.white))
+            }
         }
+
+        
 
 
 
