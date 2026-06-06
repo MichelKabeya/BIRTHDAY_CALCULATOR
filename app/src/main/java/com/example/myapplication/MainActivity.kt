@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.textView)
         val pop = "Hello World!"
         // turn a text in to uppercase
-        textView.text = pop.uppercase()
+        textView.text = pop.uppercase().trim()
         // accumulating a value
         var birthday = 4
         birthday += 10
@@ -48,6 +48,14 @@ class MainActivity : AppCompatActivity() {
         // setting the adapter to the spinner
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinDown.adapter = adapter
+
+        val viewColor = findViewById<TextView>(R.id.viewColor)
+        // set a background color based on the selected item
+        if (spinDown.selectedItem == "Water") {
+            viewColor.setBackgroundColor(resources.getColor(R.color.black))
+        } else if (spinDown.selectedItem == "Fire") {
+            viewColor.setBackgroundColor(resources.getColor(R.color.white))
+        }
 
 
 
